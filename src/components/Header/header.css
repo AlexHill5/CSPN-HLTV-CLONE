@@ -1,0 +1,24 @@
+.main-container-header{
+    height: 65px;
+    display: flex;
+    border-bottom: thin black solid;
+    justify-content: space-between;
+    background-color: #2b2c2d
+} 
+
+
+.hltv-logo{
+    height: 65px;
+
+    
+}
+
+.links{
+    padding: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+Link {
+    text-decoration: none;
+}

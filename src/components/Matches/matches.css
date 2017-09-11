@@ -1,0 +1,95 @@
+/******Page Layout*******/
+.main-content-wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.ad-left{
+    /*background-image: url('./ad-left.png');*/
+    height: 100vh;
+    width: 16%;
+}
+
+.center-content-matches{
+    height: 100vh;
+    width: 85%;
+
+}
+
+.mid-season{
+    padding-top: 5%;
+    height: 50%
+    
+
+}
+
+.ad-right{
+    height: 100vh;
+    width: 16%;
+
+    /*background-image: url('./ad-right.png');*/
+}
+
+/* live matches styling*/
+
+.matches-header{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+
+}
+
+.live-match-container{
+    height: 200px;
+    width: 400px;
+    border: medium solid black;
+    background-color: #FFFFFF;
+    margin: 5px;
+}
+
+.live-event{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-bottom: thin solid black;
+}
+
+.no-live-matches{
+    height: 500px;
+}
+
+.flex-wrap-matches{
+    justify-content: center;
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/****UPCOMING MATCHES STYLING****/
+
+.upcoming-matches-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.upcoming-matches-li{
+    background-color: #FFFFFF;
+    width: 75%;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    border: thin solid black;
+
+}
+
+
+
+
+

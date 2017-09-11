@@ -1,0 +1,34 @@
+
+.main-content-wrapper{
+    height: 100vh;
+    display: flex;
+}
+
+.ad-left{
+    /*background-image: url('./ad-left.png');*/
+    height: 100vh;
+    width: 16%;
+}
+
+.center-content{
+    height: 100vh;
+    width: 68%;
+    /*background-color: #2D3844;*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.mid-season{
+    padding-top: 5%;
+    height: 50%
+    
+
+}
+
+.ad-right{
+    height: 100vh;
+    width: 16%;
+
+    /*background-image: url('./ad-right.png');*/
+}

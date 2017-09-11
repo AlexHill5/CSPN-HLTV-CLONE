@@ -1,0 +1,217 @@
+.main-match-wrapper{
+    height: 100vh;
+    display: flex;
+}
+
+.center-content-detailed-match{
+    height: 100vh;
+    width: 71%;
+    /*background-color: #2D3844;*/;
+
+}
+
+
+/*Team info-banner*/
+
+.match-banner-top{
+    height: 250px;
+    display: flex;
+     box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin: auto;
+    margin-top: 50px;
+    background-color: white;
+}
+
+.team1-left{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-and-event{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.team2-right{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.team-logo{
+    height: 100px;
+}
+
+.team-name{
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+
+
+/*maps-livestreams section*/
+
+.maps-livestreams-section{
+    height: 325px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+
+.maps-left{
+    width: 49.5%;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    background-color: white;
+}
+
+.streams-right{
+    width: 49.5%;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    background-color: white;
+}
+
+.maps{
+    height: 45px;
+    border-bottom: thin gray solid
+}
+
+
+.TBD{
+    height: 100px;
+    text-align: center;
+    padding-top: 50px; 
+}
+
+.streams{
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    color: black
+}
+
+a {
+    text-decoration: none;
+}
+
+.streams:hover{
+    background-color: #E5E7EA;
+  
+}
+.map-stream-headers{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.maps-img-mrg{
+     margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/mirage.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.maps-img-ovp{
+        margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/overpass.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.maps-img-nuke{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/nuke.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.maps-img-cbl{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/cobblestone.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.maps-img-cch{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/cache.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.maps-img-inf{
+     margin-top: 25px;
+     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/inferno.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.maps-img-trn{
+     margin-top: 25px;
+     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 47px;
+    background-image: url('./maps/train.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/*team roster section*/
+
+.scoreboard-gamelog-section{
+    margin-top: 20px;
+    height: 400px;
+}
