@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './gamelog.css'
 import io from 'socket.io-client'
-const socket = io('http://localhost:4000')
+let socket
+let test
 
 class GameLog extends Component {
     constructor(){
@@ -9,20 +10,23 @@ class GameLog extends Component {
         this.state = {
 
         }
-        socket.on('live-scores', data => {
+
+    }
+    componentDidMount(){
+        socket =  io('http://localhost:4000')
+       test = socket.on('live-scores', data => {
         if(this.props.id === data.id){
             console.log(data, 'updates-front end')
            {this.setState({score: [data.score]}); }
         }
-        })
-    }
-    componentDidMount(){
+    })
         socket.emit('room', { id: this.props.id})
         socket.emit("Scorebot", this.props.id);
     }
 
     componentWillUnmount(){
         socket.emit('leave room', this.props.id);
+        socket.removeListener('testComplete', test);
     }
 
 
@@ -88,6 +92,7 @@ class GameLog extends Component {
                 case 'Bomb_Defused': return <img  key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_defused.svg')} />
                 case 'Target_Bombed':return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_exploded.svg')} />;
                 case 'Target_Saved': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/stopwatch.svg')}/>
+                case 'Round_Draw': return <div key={element.roundOrdinal} className='round-event-image'> </div>;
             }
         })
 
@@ -99,6 +104,7 @@ class GameLog extends Component {
                 case 'Bomb_Defused': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_defused.svg')} />
                 case 'Target_Bombed': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_exploded.svg')} />
                 case 'Target_Saved': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/stopwatch.svg')} />;
+                case 'Round_Draw': return <div key={element.roundOrdinal} className='round-event-image'> </div>;
             }
         })
 
@@ -110,6 +116,7 @@ class GameLog extends Component {
                 case 'Bomb_Defused': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_defused.svg')} />
                 case 'Target_Bombed':return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_exploded.svg')} />;
                 case 'Target_Saved': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/stopwatch.svg')}/>
+                case 'Round_Draw': return <div key={element.roundOrdinal} className='round-event-image'> </div>;
             }
         })
 
@@ -121,6 +128,7 @@ class GameLog extends Component {
                 case 'Bomb_Defused': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_defused.svg')} />
                 case 'Target_Bombed': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/bomb_exploded.svg')} />
                 case 'Target_Saved': return <img key={element.roundOrdinal} className='round-event-image'src={require('./images/stopwatch.svg')} />;
+                case 'Round_Draw': return <div key={element.roundOrdinal} className='round-event-image'> </div>;
             }
         })
 
@@ -129,10 +137,11 @@ class GameLog extends Component {
 
                 <div className='scoreboard'>
                     <div className='score-round'>
-                        <h1 className='current-round'> CR: {this.state.score["0"].currentRound} </h1>
+                        <h1 className='current-round'> CR: {this.state.score["0"].currentRound}</h1>
                         <div className='score-container'><h1 className='ct-scoreboard-score'>  {this.state.score['0'].counterTerroristScore}</h1> : <h1 className='t-scoreboard-score'>{this.state.score['0'].terroristScore}  </h1></div>
                         <img className='bomb-icon' src={require('./bomb-hltv.png')}/>
                     </div>
+                        <div className='scoreboard-map'>Current Map: {this.state.score['0'].mapName} </div>
                     <div className='ct-score'>
                         <div className='counterTerrorists-team-name'>
                             <div className='team-identity-ct'> <img className='scoreboard-team-img' src={this.props.team1} />{this.state.score["0"].ctTeamName}</div>

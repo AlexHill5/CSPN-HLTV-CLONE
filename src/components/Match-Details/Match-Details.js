@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './match-details.css'
 import GameLog from './Game-Log/Game-Log.js'
-import io from 'socket.io-client'
-const socket = io('http://localhost:4000')
 
 class MatchDetails extends Component {
         constructor(){
@@ -133,7 +131,7 @@ class MatchDetails extends Component {
                         </div>
                     </div>
                     <div className='scoreboard-gamelog-section'>
-                        <GameLog id={this.props.match.params.id} team1={this.state.team1} team2={this.state.team2} />
+                        <GameLog id={this.props.match.params.id} name={this.state.match["0"].team1.name} team1={this.state.team1} team2={this.state.team2} />
                     </div>
 
                 </div>

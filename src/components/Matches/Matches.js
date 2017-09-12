@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './matches.css'
 import {Link} from 'react-router-dom'
-import io from 'socket.io-client'
-
-const socket = io('http://localhost:4000')
 
 class Matches extends Component {
     constructor(){
@@ -16,11 +13,9 @@ class Matches extends Component {
     }
 
     componentWillMount(){
-
         axios.get('http://localhost:4000/Matches/Live').then(response => {
             this.setState({liveMatches: response.data})
     }).then(response => console.log(this.state.liveMatches))
-
         axios.get('http://localhost:4000/Matches/Upcoming').then(res => {
             this.setState({upcomingMatches: res.data})
 

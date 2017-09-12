@@ -93,8 +93,10 @@ const getApiAndEmit = socket => {
 }
 
 let connections = [];
-let roomid = []
+let roomid = {}
 let matchId
+let test
+
 
 
 io.on("connection", socket => {
@@ -103,25 +105,28 @@ io.on("connection", socket => {
 
     socket.on('room', data => {
         socket.join(data.id);
-        roomid.push(data.id)
+        roomid[data.id] = {}
         console.log(`joined room ${data.id}`)
+        console.log(roomid, 'room array')
     })
 
     socket.on('leave room', data => {
         socket.leave(data)
-        roomid.splice(roomid.indexOf(data))
+        delete roomid[data]
         console.log('TERMINATED ROOM')
+        console.log(roomid, 'spliced roomid')
     })
 
 
-socket.on("Scorebot", (data) => {
-    console.log(data)
-    matchId = data
-HLTV.default.connectToScorebot({id: matchId, onScoreboardUpdate: (score) => {
-    io.to(matchId).emit('live-scores', {score: score, id: matchId})
-}, onLogUpdate: (score) => {
-
-}})
+socket.on("Scorebot", (matchId) => {
+    console.log(matchId, 'match id')
+    HLTV.default.connectToScorebot({id: matchId, onScoreboardUpdate: (score) => {
+        if ( roomid.hasOwnProperty(matchId) ){
+            io.to(matchId).emit('live-scores', {score: score, id: matchId})
+        } else return null
+            }, onLogUpdate: (score) => {
+                
+            }})
 })
 
 
