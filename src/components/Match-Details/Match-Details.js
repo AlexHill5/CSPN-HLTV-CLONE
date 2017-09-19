@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './match-details.css'
 import GameLog from './Game-Log/Game-Log.js'
+import GameUpdate from './Game-updates/GameUpdates.js'
+import {Link} from 'react-router-dom'
+require ('dotenv').config()
 
 class MatchDetails extends Component {
         constructor(){
@@ -14,15 +17,14 @@ class MatchDetails extends Component {
             let test 
             let test1
             let test2
-            axios.get(`http://localhost:4000/Match/Details/${this.props.match.params.id}`).then(res => {
+            axios.get( `/Match/Details/${this.props.match.params.id}`).then(res => {
                 res.data.date = new Date(res.data.date)
                 test = [res.data]
             }).then(response => {
-                axios.get(`http://localhost:4000/TeamDetails1/${test['0'].team1.id}`).then( response2 => {
-                    console.log(response2, 'waht the hell')
+                axios.get(`/TeamDetails1/${test['0'].team1.id}`).then( response2 => {
                     test1 = response2.data
                 }).then(response => {
-                axios.get(`http://localhost:4000/TeamDetails2/${test['0'].team2.id}`).then( response3 => {
+                axios.get(`/TeamDetails2/${test['0'].team2.id}`).then( response3 => {
                     test2 = response3.data
                     this.setState({
                         team1: test1,
@@ -44,15 +46,7 @@ class MatchDetails extends Component {
         let maps
         let streams
         let team1
-
-        if(this.state.match){
-            console.log(this.state.match, "match details")
-            
-    }
-
-
     if(this.state.match){
-
     maps = this.state.match["0"].maps.map( map => {
         switch (map.name){
             case 'mrg': return (<div key={map.name} className='maps'><div  className='maps-img-mrg'> {map.name = 'Mirage'}</div> <div>Results: {map.result} </div> </div>)
@@ -62,14 +56,10 @@ class MatchDetails extends Component {
             case 'cbl': return (<div key={map.name} className='maps'><div  className='maps-img-cbl'> {map.name = 'Cobblestone'}</div> <div>Results: {map.result} </div> </div>)
             case 'nuke':return (<div key={map.name} className='maps'><div  className='maps-img-nuke'> {map.name = 'Nuke'}</div>   <div>Results: {map.result} </div> </div>)
             case 'inf':return (<div key={map.name} className='maps'><div  className='maps-img-inf'> {map.name = 'Inferno'}</div>   <div>Results: {map.result} </div> </div>)
-
             case 'tba': return (<div key={map.name} className='TBD' > {map.name = 'To Be Determined'} </div>)
-
             default: return (<div key={map.name}> {map.name} </div>)
         }
-
     })
-
     streams = this.state.match["0"].streams.map( stream => { 
         return <a href={stream.link} target="_blank"  key={stream.name}><div className='streams'> <div> {stream.name}</div> <div> {stream.viewers}</div> </div></a>
     }) 
@@ -77,9 +67,6 @@ class MatchDetails extends Component {
 
 
 }
-
-
-
 
         if(!this.state.match ){
         return (
@@ -103,7 +90,7 @@ class MatchDetails extends Component {
 
                         <div className='team1-left'>
                             <img className='team-logo' src={this.state.team1} /> 
-                            <h1 className='team-name'>{this.state.match["0"].team1.name}</h1>
+                        <Link to={`/Team/${this.state.match["0"].team1.id}`}>    <h1 className='team-name'>{this.state.match["0"].team1.name}</h1> </Link>
                         </div>
 
                         <div className='time-and-event'>
@@ -114,7 +101,7 @@ class MatchDetails extends Component {
 
                         <div className='team2-right'>
                             <img className='team-logo' src={this.state.team2} />
-                            <h1 className='team-name'>{this.state.match["0"].team2.name}</h1>
+                         <Link to={`/Team/${this.state.match["0"].team2.id}`}>    <h1 className='team-name'>{this.state.match["0"].team2.name}</h1></Link>
                         </div>
 
                     </div>
@@ -133,10 +120,10 @@ class MatchDetails extends Component {
                     <div className='scoreboard-gamelog-section'>
                         <GameLog id={this.props.match.params.id} name={this.state.match["0"].team1.name} team1={this.state.team1} team2={this.state.team2} />
                     </div>
-
+                    <div className='game-updates-section'>
+                        <GameUpdate id={this.props.match.params.id}/>
+                    </div>
                 </div>
-  
-
                 <div className='ad-right'> </div>
             </div>
         )

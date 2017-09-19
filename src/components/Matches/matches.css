@@ -38,15 +38,18 @@
     text-align: center;
     font-size: 25px;
     padding: 10px;
+    color: white;
 
 }
 
 .live-match-container{
     height: 200px;
     width: 400px;
-    border: medium solid black;
+    border: thin solid lightgray;
     background-color: #FFFFFF;
     margin: 5px;
+    color: black;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
 }
 
 .live-event{
@@ -58,35 +61,126 @@
     border-bottom: thin solid black;
 }
 
+.live-match-content-section{
+    width: 100%;
+    height: 75%
+}
+.format-maps-container-live{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: lightgray solid thin;
+}
+.format-live-match{
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.live-maps-container{
+    display: flex;
+    margin-top: 2%;
+}
+
+.live-map-names{
+    width: 75px;
+    text-align: center;
+}
+
+
 .no-live-matches{
     height: 500px;
 }
 
-.flex-wrap-matches{
+.flex-wrap-live-matches{
     justify-content: center;
     align-content: flex-start;
     display: flex;
     flex-wrap: wrap;
 }
 
-
-/****UPCOMING MATCHES STYLING****/
-
-.upcoming-matches-container{
-    display: flex;
-    flex-direction: column;
+.flex-wrap-upcoming-matches{
     justify-content: center;
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-names-scores{
+    width: 100%;
+}
+.team-name-live{
+    width: 40%;
+    height: 30px;
+    margin-left: 5%;
+    margin-top: 10px;
 }
 
 
-.upcoming-matches-li{
-    background-color: #FFFFFF;
-    width: 75%;
-    height: 40px;
-    margin: auto;
-    display: flex;
-    border: thin solid black;
 
+/****UPCOMING MATCHES STYLING****/
+.upcoming-matches-section{
+    height: 80vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+
+}
+
+.link{
+    width: 100%;
+    text-decoration: none;
+}
+.upcoming-container{
+    width: 99.9%;
+    height: 45px;;
+    display: flex;
+    border: thin solid lightgray;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin: .15%;
+
+
+}
+
+.upcoming-team1-name{
+    font-size: 100%;
+    width: 30%;
+    color: #333;
+    margin-left: 1%
+}
+
+.upcoming-date{
+    font-size: 15px;
+    color: gray;
+    padding-right: 1%;
+     
+}
+
+.upcoming-vs{
+    width: 5%;
+    font-size: 10px;
+    color: gray;
+}
+
+.upcoming-team2-name{
+    font-size: 110%;
+    width: 30%;
+    color: #333
+}
+
+.upcoming-event-name{
+    font-size: 90%;
+    width: 20%;
+    color: #556272
+}
+.upcoming-team-img{
+    height: 10%;
 }
 
 

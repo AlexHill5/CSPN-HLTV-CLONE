@@ -52,6 +52,7 @@
     font-weight: bold;
     font-size: 25px;
     margin-top: 5px;
+    color: black;
 }
 
 
@@ -213,5 +214,9 @@ a {
 
 .scoreboard-gamelog-section{
     margin-top: 20px;
+    height: 500px;
+}
+
+.game-updates-section{
     height: 400px;
 }

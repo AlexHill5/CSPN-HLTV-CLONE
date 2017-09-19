@@ -26,7 +26,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: "Open Sans", sans-serif;
-	background-color: #E5E7EA
+	/*background-color: #E5E7EA*/
+	background-color: #AAACAD
+
 
 }
 ol, ul {

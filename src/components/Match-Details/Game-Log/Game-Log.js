@@ -13,7 +13,7 @@ class GameLog extends Component {
 
     }
     componentDidMount(){
-        socket =  io('http://localhost:4000')
+        socket =  io('')
        test = socket.on('live-scores', data => {
         if(this.props.id === data.id){
             console.log(data, 'updates-front end')
@@ -187,7 +187,7 @@ class GameLog extends Component {
                         <div className='game-log-wrapper'>
                 <div className='scoreboard'>
                     <div className='score-round'>
-                        Live updates are for live games only!
+                        Loading...
                     </div>
                     <div className='ct-score'> </div>
                     <div className='t-score'>  </div> 

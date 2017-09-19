@@ -1,0 +1,59 @@
+.main-content-wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.center-content-results{
+    display: flex;
+    height: 100vh;
+    width: 85%;
+    justify-content: center;
+}
+.upcoming-container-results{
+    width: 99.9%;
+    height: 45px;;
+    display: flex;
+    border: thin solid lightgray;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin: .15%;
+}
+
+.results-section{
+    width: 100%;
+}
+
+.results-header{
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+.upcoming-team1-name-results{
+    font-size: 100%;
+    width: 11%;
+    color: #333;
+    margin-left: 1%
+
+}
+.upcoming-team2-name-results{
+    font-size: 110%;
+    width: 30%;
+    color: #333;
+}
+
+.upcoming-event-name-results{
+    color: #556272
+}
+
+.match-result{
+    font-size: 100%;
+    color: orange;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}

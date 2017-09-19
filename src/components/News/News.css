@@ -14,9 +14,6 @@
     height: 100vh;
     width: 68%;
     /*background-color: #2D3844;*/
-    display: flex;
-    justify-content: center;
-    align-content: center;
 }
 
 .mid-season{
@@ -31,4 +28,80 @@
     width: 16%;
 
     /*background-image: url('./ad-right.png');*/
+}
+
+/*news*/
+.olaf-news{
+    margin-top: 5%;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    background-color: white
+}
+
+.niko-news{
+    margin-top: 5%;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    background-color: white
+}
+.headers-news{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5%;
+    color: #2D6DA3
+}
+.olaf-picture{
+    height: 100%;
+    width: 50%;
+    background-image: url('./olaf-faze.jpg');
+    background-size: cover; 
+}
+
+.olaf-text{
+    height: 75%;
+    margin: auto;
+    margin-left: 1%;
+    font-size: 25px;
+    text-align: center;
+    width: 50%;
+    letter-spacing: 2px;
+    color: black;;
+    display: inline-block
+}
+
+.niko-liquid{
+    height:100%;
+    width: 75%;
+}
+
+.niko-text{
+    height: 75%;
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    width: 50%;
+    letter-spacing: 2px;
+    color: black;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.news-header{
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    margin-top: 1%;
+    }
+
+.epicenter-ad{
+    background-image: url('./epicenter-img.png');
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }

@@ -19,3 +19,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+//  //"now" : { "alias" : "CSPN - COUNTERSTRIKE PROF NETWORK"}
+
+db
+
+node_modules
+
+.env
+
+.env.prod

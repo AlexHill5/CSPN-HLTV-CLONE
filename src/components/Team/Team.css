@@ -1,0 +1,97 @@
+.chartjs-render-monitor{
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin-bottom: 2%;
+
+}
+
+.team-banner{
+    height: 30%;
+    width: 100%;
+    background-size: contain;
+    background-color: white;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin-bottom: 5%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./bokeh-banner.jpg');
+    background-size: cover;
+
+}
+
+.team-name-team-stats{
+    height: 12%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-top: 2%;
+
+}
+
+.team-location-img{
+    height: 25%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.pin-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.team-logo-team-page{
+    height: 35%;
+}
+
+.location-pin{
+    height: 25px;
+    width: 25px;
+}
+
+.team-rank{
+    padding-top: 1%;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+.roster-container{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 7px 28px rgba(0,0,0,0.25);
+    margin-bottom: 5%;
+    align-items: center;
+
+}
+
+.player-wrapper{
+    height: 80%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-name{
+    width: 80%;
+    text-align: center;
+
+}
+
+.player-img{
+    height: 90%;
+    width: 100%;
+    justify-content: space-evenly;
+}
