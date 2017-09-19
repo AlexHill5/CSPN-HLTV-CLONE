@@ -91,8 +91,8 @@ app.get('db').find_session_user([obj.id])
   })
 });
 app.get('/auth/callback', passport.authenticate('auth0', {
-  successRedirect: 'http://localhost:3000/Matches',
-  failureRedirect: 'http://localhost:3000/#/'
+  successRedirect: '/Matches',
+  failureRedirect: '/#/'
 }))
 
 app.get('/auth/me', (req, res, next) => {
@@ -123,7 +123,7 @@ app.get('/getCoins', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
   req.logOut();
-  return res.redirect(302, 'http://localhost:3000/');
+  return res.redirect(302, '/');
 })
 // LIVE MATCHES
 let liveMatches = [] 

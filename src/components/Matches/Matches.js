@@ -11,7 +11,7 @@ class Matches extends Component {
     }
 
     componentWillMount(){
-        axios.get('/Matches/Live').then(response => {
+        axios.get( '/Matches/Live').then(response => {
             this.setState({liveMatches: response.data})
     }).then(response => console.log(this.state.liveMatches))
         axios.get('/Matches/Upcoming').then(res => {
