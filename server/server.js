@@ -129,22 +129,25 @@ app.get('/auth/logout', (req, res) => {
 let liveMatches = [] 
 app.get('/Matches/Live', (req, res) => {
         console.log('hit')
-    HLTV.default.getMatches().then( response =>
-        liveMatches = response.filter(e => {
+    HLTV.default.getMatches().then( response => {
+        console.log(response, 'live matches part1')
+        return liveMatches = response.filter(e => {
             console.log(response, 'live matches')
             if (e.live) return e
         })
-    ).then( response2 => (liveMatches === []) ? res.status(200).send('eat it') : res.status(200).send(liveMatches ) )
+}).then( response2 => (liveMatches === []) ? res.status(200).send('eat it') : res.status(200).send(liveMatches ) )
 })
 
 // UPCOMING 
 app.get('/Matches/Upcoming', (req, res) => {
-    HLTV.default.getMatches().then( response =>
-        allMatches = response.filter(e => {
+    console.log('upcoming matches endpoint is it')
+    HLTV.default.getMatches().then( response => {
+        console.log('upcoming matches after htlv')
+        return allMatches = response.filter(e => {
             console.log(e, 'upcoming matches')
             if (!e.live) return e
         })
-    ).then(response => res.status(200).send(allMatches))
+    }).then(response => res.status(200).send(allMatches))
 })
 
 //Results
