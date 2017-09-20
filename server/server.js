@@ -130,6 +130,7 @@ let liveMatches = []
 app.get('/Matches/Live', (req, res) => {
     HLTV.default.getMatches().then( response =>
         liveMatches = response.filter(e => {
+            console.log(response, 'live matches')
             if (e.live) return e
         })
     ).then( response2 => (liveMatches === []) ? res.status(200).send('eat it') : res.status(200).send(liveMatches ) )
@@ -139,6 +140,7 @@ app.get('/Matches/Live', (req, res) => {
 app.get('/Matches/Upcoming', (req, res) => {
     HLTV.default.getMatches().then( response =>
         allMatches = response.filter(e => {
+            console.log(response, 'upcoming matches')
             if (!e.live) return e
         })
     ).then(response => res.status(200).send(allMatches))
