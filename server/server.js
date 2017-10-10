@@ -10,17 +10,23 @@ const passport = require('passport');
 const massive = require('massive')
 const Auth0Strategy = require('passport-auth0');
 const secrets = require('./secrets.js')
+const path = require('path')
 
 const app = express();
 var server = http.createServer(app)
 
 const io = socketIo(server);
 
+
 let userid
 
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(express.static(path.resolve(__dirname, '../', 'build')) )
+
+
+
 
 // LIVE MATCHES
 let liveMatches = [] 
@@ -167,9 +173,9 @@ socket.on("Scorebot", (matchId) => {
 
 })
 
-
-
-
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+});
 
 
 server.listen(4000, console.log('listening on 4000'))
