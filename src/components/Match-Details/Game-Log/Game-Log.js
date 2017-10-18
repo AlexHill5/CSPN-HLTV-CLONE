@@ -13,8 +13,8 @@ class GameLog extends Component {
 
     }
     componentDidMount(){
-        socket =  io('')
-       test = socket.on('live-scores', data => {
+        socket =  io('http://localhost:4000')
+       socket.on('live-scores', data => {
         if(this.props.id === data.id){
             console.log(data, 'updates-front end')
            {this.setState({score: [data.score]}); }

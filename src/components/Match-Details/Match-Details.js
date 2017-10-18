@@ -4,7 +4,6 @@ import './match-details.css'
 import GameLog from './Game-Log/Game-Log.js'
 import GameUpdate from './Game-updates/GameUpdates.js'
 import {Link} from 'react-router-dom'
-require ('dotenv').config()
 
 class MatchDetails extends Component {
         constructor(){
@@ -17,14 +16,14 @@ class MatchDetails extends Component {
             let test 
             let test1
             let test2
-            axios.get( `/Match/Details/${this.props.match.params.id}`).then(res => {
+            axios.get( `http://localhost:4000/Match/Details/${this.props.match.params.id}`).then(res => {
                 res.data.date = new Date(res.data.date)
                 test = [res.data]
             }).then(response => {
-                axios.get(`/TeamDetails1/${test['0'].team1.id}`).then( response2 => {
+                axios.get(`http://localhost:4000/TeamDetails1/${test['0'].team1.id}`).then( response2 => {
                     test1 = response2.data
                 }).then(response => {
-                axios.get(`/TeamDetails2/${test['0'].team2.id}`).then( response3 => {
+                axios.get(`http://localhost:4000/TeamDetails2/${test['0'].team2.id}`).then( response3 => {
                     test2 = response3.data
                     this.setState({
                         team1: test1,

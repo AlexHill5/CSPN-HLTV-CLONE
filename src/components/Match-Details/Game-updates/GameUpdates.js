@@ -12,7 +12,7 @@ class gameUpdates extends Component {
     }
 
     componentDidMount(){
-    socket =  io('');
+    socket =  io('http://localhost:4000');
 
     socket.on('game-log-updates', data => {
         if(this.props.id === data.id){

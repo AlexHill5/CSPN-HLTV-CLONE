@@ -10,7 +10,7 @@ class Header extends Component {
                <Link to='/'> <h2 className='links'> NEWS </h2> </Link>
                <Link to='/Matches'> <h2 className='links'> MATCHES </h2> </Link>
                <Link to='/Results'> <h2 className='links'> RESULTS </h2> </Link>
-                <h2 className='links'> LOGIN </h2>  
+                <h2 className='links'></h2>  
         </div>
     );
     }

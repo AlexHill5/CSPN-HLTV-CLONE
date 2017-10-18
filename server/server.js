@@ -23,7 +23,8 @@ let userid
 
 app.use(cors())
 app.use(bodyParser.json())
-app.use(express.static(path.resolve(__dirname, '../', 'build')) )
+// app.use(express.static(path.resolve(__dirname, '../', 'build')) )
+
 
 
 
@@ -68,6 +69,7 @@ app.get('/GetTeam/:id', (req, res) => {
 
 // DETAILED Match API CALL
 app.get('/Match/Details/:id', (req, res) => {
+
     HLTV.HLTV.getMatch({id: req.params.id}).then( matchDetails => {
         res.status(200).send(matchDetails)
     })
@@ -94,7 +96,9 @@ app.get(`/TeamDetails2/:id`, (req, res) => {
     })
 })
 
-
+app.get('/test', (req, res) => {
+    console.log('wetfsdfasf')
+})
 
 
 
@@ -136,8 +140,9 @@ io.on("connection", socket => {
     })
 
 
-socket.on("Scorebot", (matchId) => {
-    console.log(matchId, 'match id')
+socket.on("Scorebot", matchId => {
+    console.log(typeof parseInt(matchId))
+        parseInt(matchId)
     HLTV.default.connectToScorebot({id: matchId, onScoreboardUpdate: (score) => {
         if ( roomid.hasOwnProperty(matchId) ){
             io.to(matchId).emit('live-scores', {score: score, id: matchId})
@@ -152,8 +157,10 @@ socket.on("Scorebot", (matchId) => {
 
 
 
+
+
     socket.on('disconnect', function () {
-        console.log('asdlfjasdf')
+        console.log('Socket Disconnected!')
     connections.splice(connections.indexOf(socket), 1);
      });
 
@@ -173,9 +180,6 @@ socket.on("Scorebot", (matchId) => {
 
 })
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
 
 
 server.listen(4000, console.log('listening on 4000'))
